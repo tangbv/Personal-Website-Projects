@@ -1,4 +1,3 @@
-
 function MovieCard({movie}) {
 
 	function onFav() {
@@ -21,4 +20,4 @@ function MovieCard({movie}) {
   	</div>
 }
 
-export default MovieCard
+export default MovieCard;

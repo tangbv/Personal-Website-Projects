@@ -1,14 +1,13 @@
-import { useState } from 'react'
-import './App.css'
-import MovieCard from './components/MovieCard'
+import './App.css';
+import Home from './pages/Home';
 
 function App() {
-  return (
-    <>
-		<MovieCard movie={{title: "Interstellar", release_date: "2014"}}/>
-		<MovieCard movie={{title: "Cars", release_date: "2006"}}/>
-	</>
-  )
+
+    return (
+        <>
+        <Home />
+	    </>
+    )
 }
 
-export default App
+export default App;
