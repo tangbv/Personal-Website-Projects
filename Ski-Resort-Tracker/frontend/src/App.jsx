@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import ResortCard from './components/ResortCard'
+import Home from './pages/Home'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-     <ResortCard resort={{name: "massanutten", open_date: "1973"}}></ResortCard>
-     <ResortCard resort={{name: "Timberline", open_date: "1987"}}></ResortCard>
+     <Home />
     </>
   )
 }
