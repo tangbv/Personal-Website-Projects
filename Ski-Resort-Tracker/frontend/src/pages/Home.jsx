@@ -10,8 +10,10 @@ function Home() {
         {id: 3, name: "Snowshoe Mountain Resort", location: "West Virginia"},
     ]
 
-    const handleSearch = () => {
-
+    const handleSearch = (e) => {
+        e.preventDefault()
+        alert(searchQuery)
+        setSearchQuery("")
     }
 
     return <div className="home">
@@ -27,9 +29,11 @@ function Home() {
         </form>
 
         <div className="resorts-grid">
-            {resorts.map((resort) => (
-                <ResortCard resort={resort} key={resort.id} />
-            ))}
+            {resorts.map((resort) => 
+                (
+                    <ResortCard resort={resort} key={resort.id} />
+                )
+            )}
         </div> 
     </div>
 }
