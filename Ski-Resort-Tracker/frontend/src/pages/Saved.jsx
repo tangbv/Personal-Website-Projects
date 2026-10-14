@@ -1,3 +1,5 @@
+import "../css/Saved.css"
+
 function Save() {
     return <div className="saves-empty">
         <h2>No saved ski resorts yet</h2>

@@ -1,3 +1,4 @@
+import "../css/ResortCard.css" 
 
 function ResortCard({resort}) {
 
