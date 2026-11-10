@@ -1,15 +1,30 @@
 import ResortCard from "../components/ResortCard"
-import {useState} from "react"
+import {useState, useEffect } from "react"
+import {searchResort, getSkiResorts} from "../services/api"
 import "../css/Home.css"
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState("")
+    const [resorts, setResorts] = useState([]);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    const resorts = [
-        {id: 1, name: "Massanutten Resort", location: "Virginia"},
-        {id: 2, name: "Timberline Mountain", location: "West Virginia"},
-        {id: 3, name: "Snowshoe Mountain Resort", location: "West Virginia"},
-    ]
+    useEffect(() => {
+        const loadSkiResorts = async () => {
+            try {
+                const skiResorts = await getSkiResorts()
+                setResorts(skiResorts)
+            } catch (err) {
+                console.log(err)
+                setError("Failed to load ski resorts...")
+            }
+            finally {
+                setLoading(false)
+            }
+        }
+
+        loadSkiResorts()
+    }, [])
 
     const handleSearch = (e) => {
         e.preventDefault()
